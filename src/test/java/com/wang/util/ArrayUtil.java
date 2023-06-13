@@ -29,7 +29,7 @@ public class ArrayUtil {
         if (repetition) {
 
             for (int i = 0; i < length; i++) {
-                list.add(random.nextInt(maxRandom)+1);
+                list.add(random.nextInt(maxRandom) + 1);
             }
         } else {
             if (length > maxRandom) {
@@ -37,7 +37,7 @@ public class ArrayUtil {
             }
             int count = 0;
             while (true) {
-                int nextInt = random.nextInt(maxRandom)+1;
+                int nextInt = random.nextInt(maxRandom) + 1;
                 if (!list.contains(nextInt)) {
                     list.add(nextInt);
                     count++;
@@ -52,4 +52,20 @@ public class ArrayUtil {
         return list;
     }
 
+    public static void printArray(int[] arr) {
+        if (arr == null) {
+            throw new NullPointerException();
+        }
+        System.out.print("[ ");
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.print(arr[i] + ",");
+        }
+        if (arr.length < 1) {
+            System.out.println(" ]");
+        }else{
+            System.out.println(arr[arr.length - 1] + " ]");
+        }
+
+
+    }
 }
